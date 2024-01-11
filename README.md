@@ -7,7 +7,7 @@ Each plugin has a configuration that is used to customize some things about it. 
 
 For demonstration, 2 plugins are developed in the assignment, "sample" and "ghotopostgres" 
 
-## Implementing the assignment
+## Implementing the Zenysis assignment
 ``
 Build an ETL pipeline application that uses Python and a PostgreSQL database. The application should extract  data from the [GHO OData API](https://www.who.int/data/gho/info/gho-odata-api) and process that data in any way you see fit, finally ingesting that into the postgres database.
 ``
