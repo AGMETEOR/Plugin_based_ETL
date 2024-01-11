@@ -1,0 +1,30 @@
+name: GHOTopOSTGRES
+creator: Zenysis
+enabled: true
+run: NCDMORT3070
+etl:
+  NCD_CCS_BreastCancer:
+    indicator: NCD_CCS_BreastCancer
+    api: https://ghoapi.azureedge.net/api
+    transform:
+      columns:
+        Id: Id
+        SpatialDim: Country
+        ParentLocationCode: Region
+        TimeDimType: TimeDimType
+        TimeDim: TimeDim
+        Value: Value
+        Date: Date
+    destination:
+      postgres:
+        url: !GHOTopOSTGRES_DATABASE_URL
+  NCDMORT3070:
+    indicator: NCDMORT3070
+    api: https://ghoapi.azureedge.net/api
+    transform:
+      columns:
+        Id: Id
+        Value: Value
+    destination:
+      postgres:
+        url: !GHOTopOSTGRES_DATABASE_URL 
